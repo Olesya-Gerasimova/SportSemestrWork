@@ -1,0 +1,84 @@
+html, body{
+  height: 100%;
+  background-color: white ;
+}
+text-center{
+  text-align: center;
+}
+header{
+  width: 100%;
+  height: 40px;
+  background-color: black;
+}
+.bg-dark{
+  background-color: #32CD32!important;
+}
+.elements{
+  display: flex;
+  flex-direction: row;
+}
+.elements p{
+margin: 8px;
+color: white;
+}
+.main-container{
+  margin-top: 50px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  align-content: flex-start
+  justify-content: flex-start
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  align-items: center;
+  justify-content: center;
+}
+.containerfornews{
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type=text] {
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.registration-form{
+  width: 40%;
+}
+.registration-button{
+  margin-top: 20px;
+  width: 100%;
+}
+.services{
+  margin: 10px;
+}
+.services svg{
+  margin: 0px 10px;
+}
+footer{
+  height: 100px;
+  background-color: black;
+}
+.navbar-light .navbar-brand {
+    color:ghostwhite!important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: ghostwhite!important;
+    flex-basis: auto; 
+}
+.navbar{
+  justify-content: flex-start!important
+}
+.main-text{
+  left: 100px;
+}
