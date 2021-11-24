@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Bands</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <header>  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">SpOrT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Новости </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Бомбардиры и Ассистенты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Форум</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Поиск</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <li class="nav-item">
+            <a href="#">Войти</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Зарегистрироваться</a>
+          </li>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <span style="font-size: 180%;">Бомбардиры и Ассистенты</span>
+  </div>
+  <div>
+    <div>
+      <div id="result">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body text-center">            
+            <div id="grid"></div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="http://www.prepbootstrap.com/Content/shieldui-lite/dist/css/light/all.min.css" />
+<script type="text/javascript" src="http://www.prepbootstrap.com/Content/shieldui-lite/dist/js/shieldui-lite-all.min.js"></script>
+
+<script type="text/javascript" src="http://www.prepbootstrap.com/Content/data/shortGridData.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#grid").shieldGrid({
+            dataSource: {
+                data: gridData,
+                schema: {
+                    fields: {
+                        id: { path: "id", type: Number },
+                        age: { path: "age", type: Number },
+                        name: { path: "name", type: String },
+                        company: { path: "company", type: String },
+                        goals: { path: "goals", type: String },
+                    }
+                }
+            },
+            sorting: {
+                multiple: true
+            },
+            rowHover: false,
+            columns: [
+                { field: "name", title: "Person Name", width: "120px" },
+                { field: "age", title: "Age", width: "80px" },
+                { field: "company", title: "Company Name",width:"80px"},        
+                { field: "goals", title: "Goals", width: "80px" },
+                {
+                    width: 150,
+                    title: "Update/Delete Column",
+                    buttons: [
+                        { commandName: "edit", caption: "Edit" },
+                        { commandName: "delete", caption: "Delete" }
+                    ]
+                }
+            ],
+            editing: {
+                enabled: true,
+                mode: "popup",
+                confirmation: {
+                    "delete": {
+                        enabled: true,
+                        template: function (item) {
+                            return "Delete row with ID = " + item.id
+                        }
+                    }
+                }
+            }            
+        });
+
+       
+    });
+</script>
+
+<style type="text/css">
+    .sui-button-cell
+    {
+        text-align: center;
+    }
+
+    .sui-checkbox
+    {
+        font-size: 17px !important;
+        padding-bottom: 4px !important;
+    }
+
+    .deleteButton img
+    {
+        margin-right: 3px;
+        vertical-align: bottom;
+    }
+
+    .bigicon
+    {
+        color: #5CB85C;
+        font-size: 20px;
+    }
+</style>
+</div>
+    </div>    
+  </div>
+
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+  <a class="navbar-brand" href="#">Разработчики</a>
+  <a class="navbar-brand" href="#">О нас</a>
+  <a class="navbar-brand" href="#">Помощь</a>
+
+  </nav>
+</body>
+</html>
+
