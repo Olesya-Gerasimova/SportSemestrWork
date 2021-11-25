@@ -1,0 +1,61 @@
+﻿@page
+@model WebServer.Pages.SighUpModel
+@{
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<form id="signUpForm" method="post">
+    firstname :
+    <input id="Username" type="text" name="Username" />
+    name:
+    <input id="Password" type="text" name="Password" />
+    <input type="submit" value="Submit">
+</form>
+
+
+<script>$(document).ready(function(){
+    $("#signUpForm").submit(function () {
+            var message = {
+                username: $("#Username").val(),
+                password: $("#Password").val()
+            }
+            $.ajax({
+                url: "https://localhost:5001/api/auth/signup",
+                type: 'POST',
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(message),
+                success: function (response) {
+                    alert("The server says: " + response);
+                    window.location = "/UserProfile";
+                },
+                error: function (response) {
+                    alert("The server failed with: " + response);
+
+                    // window.location
+                    window.location.replace('/UserProfile');
+                    window.location.assign('/UserProfile');
+                    window.location.href = '/UserProfile';
+                    document.location.href = '/UserProfile';
+
+                    // Probably no bueno
+                    self.location = '/UserProfile';
+                    top.location = '/UserProfile';
+
+                    // jQuery
+                    $(location).attr('href', '/UserProfile');
+                    $(window).attr('location', '/UserProfile');
+                    $(location).prop('href', '/UserProfile');
+                    //window.location = "/UserProfile";
+                    //window.location.href = '/UserProfile';
+                    //window.location.reload();
+                    //window.open("/UserProfile", "_self");
+                    //window.location.href = "http://example.com";
+                    //window.location.reload();
+                    
+                }
+
+            });
+    })
+});</script>

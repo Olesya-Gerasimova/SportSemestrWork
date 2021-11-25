@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6d4e6b69-1a7a-44c3-b4d6-76879d00731c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Controllers/AuthController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Handlers/UserAuthenticationHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Helpers/HashingHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Helpers/TokenHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Interfaces/IPremierLeagueService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Requests/LoginRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Requests/SignUpRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Requirements/UserBlockedStatusRequirement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Responses/LoginResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Responses/SignUpResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Services/PremierLeagueService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/project.packagespec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/.vs/ApiServer/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/.vs/ApiServer/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/.vs/ApiServer/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/.vs/ApiServer/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/ApiServer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/ApiServer.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/Controllers/UserProfilesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Controllers/UserProfilesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/ApiServer.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/ApiServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/ApiServer.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/ApiServer.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/ApiServer.runtimeconfig.dev.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/ApiServer.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Dapper.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Dependable.Extensions.Persistence.Sql.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Dependable.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Humanizer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.Design.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.Design.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.Identity.Client.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/Newtonsoft.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/System.Runtime.Caching.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/ref/ApiServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/ApiServer.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/ApiServer.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/ApiServer.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/ApiServer.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.RazorTargetAssemblyInfo.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.genruntimeconfig.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ApiServer.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/apphost.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/ref/ApiServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/staticwebassets/ApiServer.StaticWebAssets.Manifest.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/Debug/net5.0/staticwebassets/ApiServer.StaticWebAssets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiServer/ApiServer/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ApiServer/ApiServer/obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="21PbPJugFXjHwWSZvIBOSu4n8r2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6d4e6b69-1a7a-44c3-b4d6-76879d00731c" name="Changes" comment="" />
+      <created>1637845646577</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637845646577</updated>
+      <workItem from="1637845652563" duration="2000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
