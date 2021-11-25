@@ -1,15 +1,17 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ApiServer.Models;
-
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using ApiServer.Interfaces;
+using ApiServer.Services;
+using ApiServer.Helpers;
+using System;
+//using ApiServer.Requirements;
+//using Microsoft.AspNetCore.Authorization;
+//using ApiServer.Handlers;
 
 namespace ApiServer
 {
@@ -18,21 +20,35 @@ namespace ApiServer
         public void ConfigureServices(IServiceCollection services)
         {
             string con = "Server =.\\SQLExpress; Database = PremierLeague; Trusted_Connection = True;";
-            // устанавливаем контекст данных
             services.AddDbContext<PremierLeagueContext>(options => options.UseSqlServer(con));
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddJwtBearer(options =>
+                    {
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateIssuerSigningKey = true,
+                            ValidIssuer = TokenHelper.Issuer,
+                            ValidAudience = TokenHelper.Audience,
+                            IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(TokenHelper.Secret))
+                        };
+                    });
 
-            services.AddControllers(); // используем контроллеры без представлений
+            services.AddScoped<IPremierLeagueService, PremierLeagueService>();
+            services.AddControllers(); 
+            //services.AddSingleton<IAuthorizationHandler, UserAuthenticationHandler>();
         }
 
         public void Configure(IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage();
-
             app.UseRouting();
-
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); // подключаем маршрутизацию на контроллеры
+                endpoints.MapControllers(); 
             });
         }
     }

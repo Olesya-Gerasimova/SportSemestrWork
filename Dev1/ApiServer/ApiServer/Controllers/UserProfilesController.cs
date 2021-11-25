@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiServer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiServer.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class UserProfilesController : ControllerBase
     {
         PremierLeagueContext db;
@@ -29,9 +31,13 @@ namespace ApiServer.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserProfile>>> Get()
+        public async Task<IActionResult> Get()
         {
-            return await db.UserProfiles.ToListAsync();
+            var userProfile = await db.UserProfiles
+                .Include(p => p.User)
+                .Select(o=> new { Name = o.Name, Surname = o.Surname, Email = o.Email, User = o.User.Username })
+                .ToListAsync();
+            return Ok(userProfile);
         }
 
         [HttpPost]
