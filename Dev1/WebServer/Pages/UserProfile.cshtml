@@ -2,8 +2,26 @@
 @model WebServer.Pages.UserProfileModel
 @{
 }
-]
 
 <div class="text-center">
-<h1 class="display-4">This is user profile page</h1>
+    <h2 class="display-4">This is user profile page, fill in your personal info.</h2>
 </div>
+
+<form method="post">
+    Name:
+    <input id="Name" type="text" name="Name" value="@Model.upr.Name" />
+    Surname:
+    <input id="Surname" type="text" name="Surname" value="@Model.upr.Surname" />
+    Email:
+    <input id="Email" type="text" name="Email" value="@Model.upr.Email" />
+    Bio:
+    <input id="Bio" type="text" name="Bio" value="@Model.upr.Bio" />
+    BirthDate:
+    <input id="BirthDate" type="date" name="BirthDate" value="@Model.upr.BirthDate" />
+    <input type="submit" value="Submit">
+</form>
+
+<p>Debug:</p>
+<h5>@Model.UserId</h5>
+<h5>@Model.Username</h5>
+<h5>@Model.Token</h5>

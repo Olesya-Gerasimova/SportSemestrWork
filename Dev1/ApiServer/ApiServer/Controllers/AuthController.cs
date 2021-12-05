@@ -14,7 +14,6 @@ namespace ApiServer.Controllers
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
-
         private readonly IPremierLeagueService premierLeagueService;
 
         public AuthController(IPremierLeagueService premierLeagueService)
@@ -54,7 +53,7 @@ namespace ApiServer.Controllers
             {
                 return BadRequest("Username already exists! Please use different username");
             }
-            return Ok();
+            return Ok(signUpResponse);
         }
     }
 }

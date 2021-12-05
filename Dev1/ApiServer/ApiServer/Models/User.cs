@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 #nullable disable
 
@@ -16,6 +17,7 @@ namespace ApiServer.Models
         public string Username { get; set; }
         public string Password { get; set; }
 
+        [JsonIgnore] 
         public virtual ICollection<UserProfile> UserProfiles { get; set; }
     }
 }
