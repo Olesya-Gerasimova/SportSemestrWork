@@ -82,3 +82,111 @@ footer{
 .main-text{
   left: 100px;
 }
+.informationABUS{
+  font-size: 135%;
+  color: grey!important;
+}
+.second-container{
+  margin-top: 70px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  align-content: flex-start
+  justify-content: flex-start
+}
+
+.second-containerForFirstCharacter{
+  margin-top: 10px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  align-content: flex-start
+  justify-content: flex-start
+}
+.right1 {
+    float: right;
+    width: 700px;
+    height: 100px;
+    margin-top:   30px;
+}
+.right2 {
+    float: right;
+    width: 700px;
+    height: 100px;
+    margin-top:   30px;
+    margin: 10px auto 20px;
+    display: block;
+}
+
+.rightinformation {
+  font-size: 200%;
+}
+
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.card {
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+    border-width: 0;
+    transition: all .2s
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    border-bottom-width: 1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: .625rem;
+    height: 3.5rem;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(26, 54, 126, 0.125)
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem
+}
+
+.flex-truncate {
+    min-width: 0 !important
+}
+
+.d-block {
+    display: block !important
+}
+
+a {
+    color: #E91E63;
+    text-decoration: none !important;
+    background-color: transparent
+}
+
+.media img {
+    width: 40px;
+    height: auto
+}
+
+
+.right {
+    float: right;
+    width: 100px;
+    height: 100px;
+    margin-right:500px;
+}
+
+.left {
+    margin-left: 30px;
+    height: 100px;
+    width: 100px;
+    font-size: 150%;
+
+}

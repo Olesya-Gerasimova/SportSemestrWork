@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">SpOrT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Новости </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Бомбардиры и Ассистенты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Форум</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Поиск</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <li class="nav-item">
+            <a href="#">Войти</a>
+          </li>
+          <li class="nav-item">
+            <a href="#">Зарегистрироваться</a>
+          </li>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+
+<form class="container" style="display: flex; flex-direction: row;" asp-action="Settings" asp-controller="Account" method="post" enctype="multipart/form-data">
+
+        <!-- 1 column -->
+        <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; height: 80%; width: 40%">
+            <div style=" height: 100px; width: 100px;">
+                <b style="font-size:40px;">Username</b>
+                <p>Пользователь</p>
+            </div>
+                            <p style="margin-top: 20px;">
+                    <input type="submit" value="Submit" />
+                </p>
+
+        </div>
+
+        <!-- 2 col -->
+        <div class="container" style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; height: 80%; width: 60%">
+            <div style="width: 100%">
+                <p style="font-size: 30px;">Мой аккаунт</p>
+                <p>Посмотрите и отредактируйте сведения о себе</p>
+            </div>
+
+            <div style="width: 100%; margin-top: 5px;">
+                <p style="font-size: 30px;">Открытая информация</p>
+                <p>Карточка профиля видна всем пользователям этого сайта</p>
+                <p>Имя пользователя</p>
+                <input type="text" name="name" value="Username" style="color: black;">
+            </div>
+
+            <div style="width: 100%;  margin-top: 5px;">
+                <p style="font-size: 30px;">Аккаунт</p>
+                <p style="">Обновите и редактируйте информацию, которой вы делитесь с сообществом</p>
+                <p>Ваш никнейм</p>
+                <input type="text" name="Username" class="form-control" value="Username" style="color: black;">
+
+                <p style="margin-top: 5px;">
+                    <label>Change password</label>
+                    <input name="CurrentPassword" type="password" class="form-control" placeholder="Current password" style="color: black;"/>
+                    <input name="NewPassword" type="password" class="form-control" placeholder="New password" style="margin-top: 10px; color:black;" />
+                </p>
+            </div>
+
+        </div>
+
+    </form>
+
+    <div style="height:100px; margin-top:25px "><br>k<br /></div>
+    <div style="height:100px; margin-top:10px "><br>k<br /></div>
+
+
+
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+  <a class="navbar-brand" href="#">Разработчики</a>
+  <a class="navbar-brand" href="#">О нас</a>
+  <a class="navbar-brand" href="#">Помощь</a>
+
+  </nav>
+</body>
+</html>
+
