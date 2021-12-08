@@ -1,0 +1,48 @@
+﻿@page
+@model WebServer.Pages.SighUpModel
+@{
+    ViewData["Title"] = "PremierLeague";
+}
+<head>
+  <meta charset="UTF-8">
+  <title>SportRegister</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+  <div class="main-container">
+    <span style="font-size: 180%;">Регистрация</span>
+    <b style="font-size : 180% ; height : 50px">Зарегистрируйтесь используя логин и пароль</b>
+  </div>
+  <div class="container">
+    <h1 class="text-center" style="font-family: Arial; font-weight: lighter;">Регистрация</h1>
+    
+    <form class="registration-form"
+          method="post">
+      <p>Имя пользователя</p>
+      <input id="Username" type="text" name="Username">
+
+      <p>Пароль</p>
+      <input id="Password" type="password" name="Password">
+
+      <button type="submit" value="Submit" class="btn btn-dark registration-button">Зарегистрироваться</button>
+    </form>
+    
+    </div>
+  
+
+  <nav class="navbar fixed-bottom navbar-light bg-dark">
+  <a class="navbar-brand" href="#">Разработчики</a>
+  <a class="navbar-brand" href="#">О нас</a>
+  <a class="navbar-brand" href="#">Помощь</a>
+
+  </nav>
+</body>
+

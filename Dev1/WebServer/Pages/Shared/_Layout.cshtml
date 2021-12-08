@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebServer</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="@Url.Page("Index")">SpOrT</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="@Url.Page("Index")">Новости </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Бомбардиры и Ассистенты</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Форум</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Поиск</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <li class="nav-item">
+                <a href="@Url.Page("Login")">Войти</a>
+              </li>
+              <li class="nav-item">
+                <a href="@Url.Page("SighUp")">Зарегистрироваться</a>
+              </li>
+            </span>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - WebServer - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

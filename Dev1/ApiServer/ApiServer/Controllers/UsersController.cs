@@ -4,12 +4,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using ApiServer.Models;
 using System.Threading.Tasks;
+using ApiServer.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace ApiServer.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         PremierLeagueContext db;
@@ -18,8 +21,8 @@ namespace ApiServer.Controllers
             db = context;
             if (!db.Users.Any())
             {
-                db.Users.Add(new User {Username = "o.gerrr", Password = "Jktcz2002" });
-                db.Users.Add(new User {Username = "sofa_pom", Password = "ilovecucumber"});
+                db.Users.Add(new User {Username = "o.gerrr", Password = HashingHelper.HashUsingPbkdf2("Jktcz2002") });
+                db.Users.Add(new User {Username = "sofa_pom", Password = HashingHelper.HashUsingPbkdf2("ilovecucumber") });
                 db.SaveChanges();
             }
         }

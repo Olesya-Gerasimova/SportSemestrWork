@@ -1,41 +1,67 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using ApiServer.Models;
-using Microsoft.EntityFrameworkCore;
+using ApiServer.Interfaces;
+using ApiServer.Requests;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiServer.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserProfilesController : ControllerBase
+    [Authorize]
+    public class UserProfilesController : Controller
     {
-        PremierLeagueContext db;
-        public  UserProfilesController(PremierLeagueContext context)
+        private readonly IUserProfileService userProfileService;
+        public  UserProfilesController(IUserProfileService userProfileService)
         {
-            db = context;
-            if (!db.UserProfiles.Any())
-            {
-                User user1 =  db.Users.FirstOrDefault(x => x.Username == "o.gerrr");
-                if (user1 != null)
-                    db.UserProfiles.Add(new UserProfile { Name = "Olesya", Surname = "Gerasimova", Email = "olesy_2002@mail.ru", Bio = "student", BirthDate = new DateTime(2002, 03, 06), UserId = user1.Id, User = user1});
-                User user2 = db.Users.FirstOrDefault(x => x.Username == "sofa_pom");
-                if (user2 != null)
-                    db.UserProfiles.Add(new UserProfile { Name = "sofa", Surname = "pomeranskaya", Email = "sofa_pom_dog@mail.ru", Bio = "dog", BirthDate = new DateTime(2015, 08, 06), UserId = user2.Id, User = user2 });
-                db.SaveChanges();
-            }
+            this.userProfileService = userProfileService;
         }
-
+        
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserProfile>>> Get()
+        public async Task<IActionResult> GetUserProfile([FromBody] UserProfileRequest userProfileRequest)
         {
-            return await db.UserProfiles.ToListAsync();
-        }
+            if (userProfileRequest == null || string.IsNullOrEmpty(userProfileRequest.Username) ||
+                string.IsNullOrEmpty(userProfileRequest.UserId) || string.IsNullOrEmpty(userProfileRequest.Token))
+            {
+                return BadRequest("Missing user details to retrieve associated profile!");
+            }
+            Console.WriteLine("Received request for retrieving profile for: " + 
+                              userProfileRequest.Username + 
+                              userProfileRequest.UserId);
+            var userProfileResponse = await userProfileService.GetProfileForUser(userProfileRequest);
+            if (userProfileResponse == null)
+            {
+                return NotFound();
+            }
+            Console.WriteLine("Returning profile with 200");
+            Console.WriteLine("Profile: " + userProfileResponse.Name + userProfileResponse.Surname);
 
+            return Ok(userProfileResponse);
+        }
+        
         [HttpPost]
-        public async Task<ActionResult<UserProfile>> Post(UserProfile userProfile)
+        [HttpPut]
+        public async Task<IActionResult> CreateUpdateProfileForUser([FromBody] UserProfileCreateUpdateRequest userProfileRequest)
+        {
+            if (userProfileRequest == null || string.IsNullOrEmpty(userProfileRequest.Username) ||
+                string.IsNullOrEmpty(userProfileRequest.UserId) || string.IsNullOrEmpty(userProfileRequest.Token))
+            {
+                return BadRequest("Missing user details to create/update user profile!");
+            }
+            Console.WriteLine("Received request to create a new profile: " + 
+                              userProfileRequest.Email + 
+                              userProfileRequest.Name + 
+                              userProfileRequest.Surname + userProfileRequest.Token + 
+                              userProfileRequest.UserId + userProfileRequest.BirthDate
+                              );
+            var userProfileResponse = await userProfileService.CreateUpdateProfileForUser(userProfileRequest);
+            return Ok(userProfileResponse);
+        }
+        
+/*
+        [HttpPost]
+        public async Task<ActionResult<UserProfile>> Post([FromBody] UserProfile userProfile)
         {
             if (userProfile == null)
             {
@@ -47,7 +73,7 @@ namespace ApiServer.Controllers
             return Ok(userProfile);
         }
         [HttpPut]
-        public async Task<ActionResult<UserProfile>> Put(UserProfile userProfile)
+        public async Task<ActionResult<UserProfile>> Put([FromBody] UserProfile userProfile)
         {
             if (userProfile == null)
             {
@@ -74,7 +100,7 @@ namespace ApiServer.Controllers
             await db.SaveChangesAsync();
             return Ok(userProfile);
         }
-
+*/
 
     }
 }
