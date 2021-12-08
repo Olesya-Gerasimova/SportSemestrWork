@@ -3,25 +3,66 @@
 @{
 }
 
-<div class="text-center">
-    <h2 class="display-4">This is user profile page, fill in your personal info.</h2>
-</div>
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<form method="post">
-    Name:
-    <input id="Name" type="text" name="Name" value="@Model.upr.Name" />
-    Surname:
-    <input id="Surname" type="text" name="Surname" value="@Model.upr.Surname" />
-    Email:
-    <input id="Email" type="text" name="Email" value="@Model.upr.Email" />
-    Bio:
-    <input id="Bio" type="text" name="Bio" value="@Model.upr.Bio" />
-    BirthDate:
-    <input id="BirthDate" type="date" name="BirthDate" value="@Model.upr.BirthDate" />
-    <input type="submit" value="Submit">
-</form>
+  <link rel="stylesheet" href="css/style.css">
 
-<p>Debug:</p>
-<h5>@Model.UserId</h5>
-<h5>@Model.Username</h5>
-<h5>@Model.Token</h5>
+  
+</head>
+
+<body>
+
+<form class="container" style="display: flex; flex-direction: row;"  method="post" enctype="multipart/form-data">
+
+    <!-- 2 col -->
+        <div class="container" style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; height: 80%; width: 60%">
+            <div style="width: 100%">
+                <p style="font-size: 30px;">Мой аккаунт</p>
+                <p>Посмотрите и отредактируйте сведения о себе</p>
+            </div>
+
+            <div style="width: 100%; margin-top: 5px;">
+                <p>Имя пользователя</p>
+                <input id="Name" type="text" name="Name" value="@Model.upr.Name"  style="color: black;">
+            </div>
+            
+            <div style="width: 100%; margin-top: 5px;">
+                <p>Фамилия</p>
+                <input id="Surname" type="text" name="Surname" value="@Model.upr.Surname"  style="color: black;">
+            </div>
+            
+            <div style="width: 100%; margin-top: 5px;">
+                <p>Почта</p>
+                <input id="Email" type="text" name="Email" value="@Model.upr.Email" style="color: black;">
+            </div>
+            
+            <div style="width: 100%; margin-top: 5px;">
+                <p>Биография</p>
+                <input id="Bio" type="text" name="Bio" value="@Model.upr.Bio"  style="color: black;">
+            </div>
+            
+            <div style="width: 100%; margin-top: 5px;">
+                <p>День рождения</p>
+                <input id="BirthDate" type="date" name="BirthDate" value="@Model.upr.BirthDate" style="color: black;">
+            </div>
+             <input type="submit" value="Submit" />
+
+        </div>
+
+    </form>
+
+
+<nav class="navbar fixed-bottom navbar-light bg-dark">
+  <a class="navbar-brand" href="#">Разработчики</a>
+  <a class="navbar-brand" href="#">О нас</a>
+  <a class="navbar-brand" href="#">Помощь</a>
+
+  </nav>
+</body>
+
+

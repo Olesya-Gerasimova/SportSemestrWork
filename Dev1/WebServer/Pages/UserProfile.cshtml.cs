@@ -116,11 +116,13 @@ namespace WebServer.Pages
                 JsonSerializer serializer = new JsonSerializer();
                 UserProfileResponse lr = serializer.Deserialize<UserProfileResponse>(jsonReader);
                 Console.WriteLine("Id: " + lr.Id + ", Token: " + lr.Token + ", Username: " + lr.Username);
+                DateTime transformDateTime = DateTime.Parse(lr.BirthDate);
+                string jsBirthDate = transformDateTime.ToString("yyyy-MM-dd");
                 this.upr = new UserProfileResponse
                 {
                     Id = lr.Id, Username = lr.Username, Token = lr.Token,
                     Name = lr.Name, Surname = lr.Surname,
-                    Bio = lr.Bio, Email = lr.Email, BirthDate = lr.BirthDate
+                    Bio = lr.Bio, Email = lr.Email, BirthDate = jsBirthDate
                 };
                 return Page();
             }

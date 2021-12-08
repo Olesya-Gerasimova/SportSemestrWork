@@ -44,21 +44,28 @@ namespace ApiServer.Services
         public async Task<UserProfileResponse> CreateUpdateProfileForUser(UserProfileCreateUpdateRequest createUpdateRequest)
         {
             var userProfile = await db.UserProfiles.FirstOrDefaultAsync(x => x.UserId == Convert.ToInt32(createUpdateRequest.UserId));
-            UserProfile up = new UserProfile { Name = createUpdateRequest.Name, 
-                Surname = createUpdateRequest.Surname,
-                Bio = createUpdateRequest.Bio,
-                BirthDate = Convert.ToDateTime(createUpdateRequest.BirthDate),
-                Email = createUpdateRequest.Email,
-                UserId = Convert.ToInt32(createUpdateRequest.UserId)
-            };
+            
             if (userProfile == null)
             {
+                UserProfile up = new UserProfile { Name = createUpdateRequest.Name, 
+                    Surname = createUpdateRequest.Surname,
+                    Bio = createUpdateRequest.Bio,
+                    BirthDate = Convert.ToDateTime(createUpdateRequest.BirthDate),
+                    Email = createUpdateRequest.Email,
+                    UserId = Convert.ToInt32(createUpdateRequest.UserId)
+                };
                 db.UserProfiles.Add(up);
                 await db.SaveChangesAsync();
             }
             else
             {
-                db.UserProfiles.Update(up);
+                userProfile.Name = createUpdateRequest.Name;
+                userProfile.Surname = createUpdateRequest.Surname;
+                userProfile.Email = createUpdateRequest.Email;
+                userProfile.Bio = createUpdateRequest.Bio;
+                userProfile.BirthDate = Convert.ToDateTime(createUpdateRequest.BirthDate);
+                userProfile.UserId = Convert.ToInt32(createUpdateRequest.UserId);
+                db.UserProfiles.Update(userProfile);
                 await db.SaveChangesAsync();
             }
             return new UserProfileResponse
